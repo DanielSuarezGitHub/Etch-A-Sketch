@@ -52,13 +52,16 @@ button {
     width: 225px;
     border: 2px black solid;
     border-radius: 8px;
+    opacity: 0.7;
+    background-color: white;
 }
 
-.grid  {
+.gridcontainer  {
     height: 700px;
     width: 700px;
     background-color: white;
     margin: 0 75px;
+    display: grid;
 }
 
 .sizeofGrid {
@@ -67,3 +70,13 @@ button {
     margin-bottom: -15px;
 }
 
+input {
+    border: none;
+    width: 225px;
+}
+
+button:hover {
+    transition: 0.3s;
+    opacity: 1;
+    background-color: whitesmoke;
+}
