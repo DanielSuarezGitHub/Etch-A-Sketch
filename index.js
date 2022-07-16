@@ -5,10 +5,13 @@ const rainbow = document.querySelector('.rainbow')
 const clear  = document.querySelector('.clear')
 const gridcontainer = document.querySelector('.gridcontainer')
 const colorselector = document.querySelector('.colorselector')
-const body = document
+const body = document.querySelector('body')
 let currentColor = "#000000"
 griddySize = 16
 let isRainbow = false
+let click = false
+
+body.addEventListener('click', () => click = !click)
 
 createGrid(16)
 
@@ -36,9 +39,9 @@ function createGrid (gridNumber) {
       gridcontainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
       gridcontainer.insertAdjacentElement('beforeend', gridItem);
       gridItem.addEventListener('mouseover', () => {
-        if(isRainbow == false) {
+        if(isRainbow == false && click == true) {
           gridItem.style.backgroundColor = `${currentColor}`
-        } else {
+        } else if (isRainbow == true && click == true) {
           let r = Math.floor(Math.random() * 256)
           let g = Math.floor(Math.random() * 256)
           let b = Math.floor(Math.random() * 256)
